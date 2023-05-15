@@ -1,4 +1,3 @@
-
 //Motor 
 const Engine = Matter.Engine;
 //Mundo
@@ -26,19 +25,7 @@ function setup() {
     motor = Engine.create();
     mundo = motor.world;
 
-    parado = {
-      isStatic:true,
-    }
-
-    solo = Bodies.rectangle(300,390,600,30, parado);
-    World.add(mundo, solo);
-
-    mexendo = {
-      isStatic:false
-    }
-
-    bola = Bodies.circle(300,300, 30, mexendo);
-    World.add(mundo, bola);
+    //criar os corpos
 
     //cria a helice
 
@@ -57,18 +44,15 @@ function draw() {
     
   //atualizar o motor
   Engine.update(motor);
-  //faz o solo
-  fill('brown');
-  rect(solo.position.x, solo.position.y, 600, 30);
-
+  //faz o retângulo para mostrar o corpo do solo
+ 
   //é aqui que faz a helice girar
 
   //aumenta o valor do ângulo
 
 
-  //faz a bolinha
-  fill("blue");
-  ellipse(bola.position.x, bola.position.y, 30);
+  //faz a ellipse para mostrar o corpo da bola
+ 
 }
 
 //é aqui que adiciona a função para aplicar força na bola
